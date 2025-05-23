@@ -1,4 +1,4 @@
-import React, { use, useState } from "react";
+import React, { useState } from "react";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import "remixicon/fonts/remixicon.css";
@@ -32,8 +32,50 @@ function App() {
   });
 
   useGSAP(() => {
-
+    if(!showContent) return;
     
+    gsap.to(".main", {
+    scale: 1,
+    rotate:0,
+    duration: 2,
+    delay: "-1",
+    ease: "Expo.easeInOut",
+    });
+
+    gsap.to(".sky", {
+    scale: 1.1,
+    rotate:0,
+    duration: 2,
+    delay: "-.8",
+    ease: "Expo.easeInOut",
+    });
+
+    gsap.to(".bg", {
+    scale: 1.1,
+    rotate:0,
+    duration: 2,
+    delay: "-.8",
+    ease: "Expo.easeInOut",
+    });
+
+    gsap.to(".text", {
+    scale: 1,
+    rotate:0,
+    duration: 2,
+    delay: "-.8",
+    ease: "Expo.easeInOut",
+    });
+
+    gsap.to(".charachter", {
+    scale: 0.8,
+    x:"-50%",
+    bottom: "-30%",
+    rotate:0,
+    duration: 2,
+    delay: "-.8",
+    ease: "Expo.easeInOut",
+    });
+
 
     const main = document.querySelector(".main");
 
@@ -83,8 +125,8 @@ function App() {
         </svg>
       </div>
       {showContent && (
-        <div className="main w-full ">
-          <div className="landing w-full h-screen bg-black">
+        <div className="main w-full  rotate-[-10deg] scale-[1.5]">
+          <div className="landing overflow-hidden relative w-full h-screen bg-black">
             <div className="navbar absolute top-0 left-0 z-[10] w-full py-6 px-10">
               <div className="logo flex items-center gap-7">
                 <div className="lines flex flex-col gap-[5px]">
@@ -100,24 +142,24 @@ function App() {
             </div>
             <div className="imagesdiv relative overflow-hidden w-full h-screen ">
               <img
-                className="absolute sky scale-[1.2] top-0 left-0 w-full h-full object-cover"
+                className="absolute sky scale-[1.5] rotate-[-20deg] top-0 left-0 w-full h-full object-cover"
                 src="./sky.png"
                 alt=""
               />
               <img
-                className="absolute bng scale-[1.3] top-0 left-0 w-full h-full object-cover"
+                className="absolute bng scale-[1.8] rotate-[-3deg] top-0 left-0 w-full h-full object-cover"
                 src="./bg.png"
                 alt=""
               />
 
-              <div className="text text-white flex flex-col gap-2 absolute top-10 left-1/2 -translate-x-1/2 ">
+              <div className="text text-white flex flex-col gap-2 absolute top-10 left-1/2 -translate-x-1/2 scale-[1.5] rotate-[-10deg]">
                 <h1 className="text-8xl leading-none -ml-40">grand</h1>
                 <h1 className="text-8xl leading-none ml-20">theft</h1>
                 <h1 className="text-8xl leading-none -ml-20">auto</h1>
               </div>
 
               <img
-                className="absolute charachter -bottom-[35%] left-1/2 -translate-x-1/2 scale-[0.9]"
+                className="absolute charachter -bottom-[150%] left-1/2 -translate-x-1/2 scale-[3] rotate-[-20deg]"
                 src="./girlbg.png"
                 alt=""
               />
