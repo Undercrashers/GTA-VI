@@ -1,7 +1,7 @@
 import React, { useState } from "react";
-import bgImage from "../public/bg.png";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
+import 'remixicon/fonts/remixicon.css'
 
 function App() {
   let [showContent, setShowContent] = useState(false);
@@ -72,13 +72,21 @@ function App() {
                         <div className="line w-9 h-2 bg-white"></div>
                         <div className="line w-6 h-2 bg-white"></div>
                     </div>
-                    <h3 className="text-4xl text-white"> Rockstar</h3>
+                    <h3 className="text-4xl -mt-[8px] leading-none text-white"> Rockstar</h3>
                 </div>
                 </div>
+                
                 <div className="imagesdiv relative overflow-hidden w-full h-screen ">
                     <img className="absolute top-0 left-0 w-full h-full object-cover" src="./sky.png" alt="" />
                     <img className="absolute top-0 left-0 w-full h-full object-cover" src="./bg.png" alt="" />
                     <img className="absolute -bottom-[35%] left-1/2 -translate-x-1/2 scale-[0.9]" src="./girlbg.png" alt="" />
+                </div>
+                <div className="btmbar text-white w-full absolute bottom-0 left-0 py-12 px-10 bg-gradient-to-t from-black to-transparent">
+                  <div className="flex gap-4">
+                    <i class="text-2xl ri-arrow-down-line"></i>
+                    <div className="text-xl font-[Arial]">Scroll Down</div>
+                  </div>
+                  <img className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 h-[45px]" src="./ps5.png" alt="" />
                 </div>
             </div>
         </div>
