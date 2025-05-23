@@ -31,6 +31,8 @@ function App() {
     });
   });
 
+  
+
   return (
     <>
       <div className="svg fixed top-0 left-0 z-[100] w-full h-screen overflow-hidden bg-black">
@@ -75,11 +77,19 @@ function App() {
                     <h3 className="text-4xl -mt-[8px] leading-none text-white"> Rockstar</h3>
                 </div>
                 </div>
-                
                 <div className="imagesdiv relative overflow-hidden w-full h-screen ">
                     <img className="absolute top-0 left-0 w-full h-full object-cover" src="./sky.png" alt="" />
                     <img className="absolute top-0 left-0 w-full h-full object-cover" src="./bg.png" alt="" />
-                    <img className="absolute -bottom-[35%] left-1/2 -translate-x-1/2 scale-[0.9]" src="./girlbg.png" alt="" />
+                    
+
+                    <div className="text text-white flex flex-col gap-2 absolute top-10 left-1/2 -translate-x-1/2 ">
+                      <h1 className="text-8xl leading-none -ml-40">grand</h1>
+                      <h1 className="text-8xl leading-none ml-20">theft</h1>
+                      <h1 className="text-8xl leading-none -ml-20">auto</h1>
+                  </div>
+
+                  <img className="absolute -bottom-[35%] left-1/2 -translate-x-1/2 scale-[0.9]" src="./girlbg.png" alt="" />
+
                 </div>
                 <div className="btmbar text-white w-full absolute bottom-0 left-0 py-12 px-10 bg-gradient-to-t from-black to-transparent">
                   <div className="flex gap-4">
