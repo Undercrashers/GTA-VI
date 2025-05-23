@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { use, useState } from "react";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import 'remixicon/fonts/remixicon.css'
@@ -31,7 +31,22 @@ function App() {
     });
   });
 
-  
+  useGSAP(() => {
+     const main = document.querySelector(".main");
+
+     main?.addEventListener("mousemove", function (e) {
+      const xMove =(e.clientX / window.innerWidth -0.5) * 40;
+      gsap.to(".main .text",{
+        x: `${xMove * 0.4}%`,
+      });
+      gsap.to(".sky",{
+        x:xMove,
+      });
+       gsap.to(".bng",{
+        x:xMove * 1.7,
+      });  
+  });
+},[showContent]); 
 
   return (
     <>
@@ -78,8 +93,8 @@ function App() {
                 </div>
                 </div>
                 <div className="imagesdiv relative overflow-hidden w-full h-screen ">
-                    <img className="absolute top-0 left-0 w-full h-full object-cover" src="./sky.png" alt="" />
-                    <img className="absolute top-0 left-0 w-full h-full object-cover" src="./bg.png" alt="" />
+                    <img className="absolute sky scale-[1.2] top-0 left-0 w-full h-full object-cover" src="./sky.png" alt="" />
+                    <img className="absolute bng scale-[1.3] top-0 left-0 w-full h-full object-cover" src="./bg.png" alt="" />
                     
 
                     <div className="text text-white flex flex-col gap-2 absolute top-10 left-1/2 -translate-x-1/2 ">
@@ -88,12 +103,12 @@ function App() {
                       <h1 className="text-8xl leading-none -ml-20">auto</h1>
                   </div>
 
-                  <img className="absolute -bottom-[35%] left-1/2 -translate-x-1/2 scale-[0.9]" src="./girlbg.png" alt="" />
+                  <img className="absolute charachter -bottom-[35%] left-1/2 -translate-x-1/2 scale-[0.9]" src="./girlbg.png" alt="" />
 
                 </div>
                 <div className="btmbar text-white w-full absolute bottom-0 left-0 py-12 px-10 bg-gradient-to-t from-black to-transparent">
                   <div className="flex gap-4">
-                    <i class="text-2xl ri-arrow-down-line"></i>
+                    <i className="text-2xl ri-arrow-down-line"></i>
                     <div className="text-xl font-[Arial]">Scroll Down</div>
                   </div>
                   <img className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 h-[45px]" src="./ps5.png" alt="" />
