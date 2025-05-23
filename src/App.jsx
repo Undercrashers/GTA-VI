@@ -1,7 +1,7 @@
 import React, { use, useState } from "react";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
-import 'remixicon/fonts/remixicon.css'
+import "remixicon/fonts/remixicon.css";
 
 function App() {
   let [showContent, setShowContent] = useState(false);
@@ -32,21 +32,24 @@ function App() {
   });
 
   useGSAP(() => {
-     const main = document.querySelector(".main");
 
-     main?.addEventListener("mousemove", function (e) {
-      const xMove =(e.clientX / window.innerWidth -0.5) * 40;
-      gsap.to(".main .text",{
+    
+
+    const main = document.querySelector(".main");
+
+    main?.addEventListener("mousemove", function (e) {
+      const xMove = (e.clientX / window.innerWidth - 0.5) * 40;
+      gsap.to(".main .text", {
         x: `${xMove * 0.4}%`,
       });
-      gsap.to(".sky",{
-        x:xMove,
+      gsap.to(".sky", {
+        x: xMove,
       });
-       gsap.to(".bng",{
-        x:xMove * 1.7,
-      });  
-  });
-},[showContent]); 
+      gsap.to(".bng", {
+        x: xMove * 1.7,
+      });
+    });
+  }, [showContent]);
 
   return (
     <>
@@ -81,39 +84,79 @@ function App() {
       </div>
       {showContent && (
         <div className="main w-full ">
-            <div className="landing w-full h-screen bg-black">
-                <div className="navbar absolute top-0 left-0 z-[10] w-full py-6 px-10">
-                <div className="logo flex items-center gap-7">
-                    <div className="lines flex flex-col gap-[5px]">
-                        <div className="line w-12 h-2 bg-white"></div>
-                        <div className="line w-9 h-2 bg-white"></div>
-                        <div className="line w-6 h-2 bg-white"></div>
-                    </div>
-                    <h3 className="text-4xl -mt-[8px] leading-none text-white"> Rockstar</h3>
+          <div className="landing w-full h-screen bg-black">
+            <div className="navbar absolute top-0 left-0 z-[10] w-full py-6 px-10">
+              <div className="logo flex items-center gap-7">
+                <div className="lines flex flex-col gap-[5px]">
+                  <div className="line w-12 h-2 bg-white"></div>
+                  <div className="line w-9 h-2 bg-white"></div>
+                  <div className="line w-6 h-2 bg-white"></div>
                 </div>
-                </div>
-                <div className="imagesdiv relative overflow-hidden w-full h-screen ">
-                    <img className="absolute sky scale-[1.2] top-0 left-0 w-full h-full object-cover" src="./sky.png" alt="" />
-                    <img className="absolute bng scale-[1.3] top-0 left-0 w-full h-full object-cover" src="./bg.png" alt="" />
-                    
-
-                    <div className="text text-white flex flex-col gap-2 absolute top-10 left-1/2 -translate-x-1/2 ">
-                      <h1 className="text-8xl leading-none -ml-40">grand</h1>
-                      <h1 className="text-8xl leading-none ml-20">theft</h1>
-                      <h1 className="text-8xl leading-none -ml-20">auto</h1>
-                  </div>
-
-                  <img className="absolute charachter -bottom-[35%] left-1/2 -translate-x-1/2 scale-[0.9]" src="./girlbg.png" alt="" />
-
-                </div>
-                <div className="btmbar text-white w-full absolute bottom-0 left-0 py-12 px-10 bg-gradient-to-t from-black to-transparent">
-                  <div className="flex gap-4">
-                    <i className="text-2xl ri-arrow-down-line"></i>
-                    <div className="text-xl font-[Arial]">Scroll Down</div>
-                  </div>
-                  <img className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 h-[45px]" src="./ps5.png" alt="" />
-                </div>
+                <h3 className="text-4xl -mt-[8px] leading-none text-white">
+                  {" "}
+                  Rockstar
+                </h3>
+              </div>
             </div>
+            <div className="imagesdiv relative overflow-hidden w-full h-screen ">
+              <img
+                className="absolute sky scale-[1.2] top-0 left-0 w-full h-full object-cover"
+                src="./sky.png"
+                alt=""
+              />
+              <img
+                className="absolute bng scale-[1.3] top-0 left-0 w-full h-full object-cover"
+                src="./bg.png"
+                alt=""
+              />
+
+              <div className="text text-white flex flex-col gap-2 absolute top-10 left-1/2 -translate-x-1/2 ">
+                <h1 className="text-8xl leading-none -ml-40">grand</h1>
+                <h1 className="text-8xl leading-none ml-20">theft</h1>
+                <h1 className="text-8xl leading-none -ml-20">auto</h1>
+              </div>
+
+              <img
+                className="absolute charachter -bottom-[35%] left-1/2 -translate-x-1/2 scale-[0.9]"
+                src="./girlbg.png"
+                alt=""
+              />
+            </div>
+            <div className="btmbar text-white w-full absolute bottom-0 left-0 py-12 px-10 bg-gradient-to-t from-black to-transparent">
+              <div className="flex gap-4">
+                <i className="text-2xl ri-arrow-down-line"></i>
+                <div className="text-xl font-[Arial]">Scroll Down</div>
+              </div>
+              <img
+                className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 h-[45px]"
+                src="./ps5.png"
+                alt=""
+              />
+            </div>
+          </div>
+          <div className="w-full h-screen flex items-center justify-center bg-black">
+            <div className="cntnr text-white flex w-full h-[80%]">
+              <div className="limg relative w-1/2 h-full">
+                <img 
+                className="absolute  top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
+                src="./imag.png" alt="" />
+              </div>
+              <div className="rg py-20">
+                <h1 className="text-8xl">Still Running,</h1>
+                <h1 className="text-8xl">Not Hunting</h1>
+                <p className="text-xl mt-15 font-[Arial]"> 
+                 In GTA VI, the streets pulse with new blood and old grudges. <br />
+                  You're not chasing trouble—it finds you first.
+                </p>
+                <p className="text-xl mt-15 font-[Arial]"> 
+                 From neon nights to sunburnt highways, the grind never sleeps. <br />
+                This time, it's not just about surviving—it's about owning the game.
+                </p>
+                <button className="bg-yellow-500 mt-8 text-black px-10 py-4 text-2xl">Download Now </button>
+                
+              </div>
+            </div>
+          </div>
         </div>
       )}
     </>
