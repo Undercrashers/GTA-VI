@@ -67,9 +67,9 @@ function App() {
     });
 
     gsap.to(".charachter", {
-    scale: 0.8,
+    scale:1,
     x:"-50%",
-    bottom: "-30%",
+    bottom: "-40%",
     rotate:0,
     duration: 2,
     delay: "-.8",
@@ -194,7 +194,12 @@ function App() {
                  From neon nights to sunburnt highways, the grind never sleeps. <br />
                 This time, it's not just about surviving—it's about owning the game.
                 </p>
-                <button className="bg-yellow-500 mt-8 text-black px-10 py-4 text-2xl">Download Now </button>
+                <button
+                  className="bg-yellow-500 mt-8 text-black px-10 py-4 text-2xl"
+                  onClick={() => window.open("https://www.rockstargames.com/VI", "_blank")}
+                >
+                  Download Now
+                </button>
                 
               </div>
             </div>
